@@ -14,8 +14,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    DBAccountManager *accountManager =
-    [[DBAccountManager alloc] initWithAppKey:@"eed61350j8ws8wv" secret:@"t8hfyzon4be64iz"];
+    DBAccountManager *accountManager = [[DBAccountManager alloc] initWithAppKey:@"eed61350j8ws8wv" secret:@"t8hfyzon4be64iz"];
     [DBAccountManager setSharedManager:accountManager];
     
     return YES;
@@ -46,6 +45,18 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark -
+#pragma mark dropbox
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url
+  sourceApplication:(NSString *)source annotation:(id)annotation {
+    DBAccount *account = [[DBAccountManager sharedManager] handleOpenURL:url];
+    if (account) {
+        NSLog(@"App linked successfully!");
+        return YES;
+    }
+    return NO;
 }
 
 @end

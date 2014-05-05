@@ -8,6 +8,7 @@
 
 
 #import "CheckViewController.h"
+#import "LocalImageManager.h"
 
 @implementation CheckViewController
 
@@ -52,7 +53,8 @@
     
     NSLog(@"up=%@ down=%@", NSStringFromCGRect(svUpRect), NSStringFromCGRect(svDownRect));
     
-    
+
+    /*
     _upImageViewArray = [NSMutableArray arrayWithObjects:
                        [UIImage imageNamed:@"1.jpg"],
                        [UIImage imageNamed:@"2.jpg"],
@@ -60,6 +62,7 @@
                        [UIImage imageNamed:@"4.jpg"],
                        [UIImage imageNamed:@"5.jpg"],
                        nil];
+     */
     
     _downImageViewArray = [NSMutableArray arrayWithObjects:
                          [UIImage imageNamed:@"1.jpg"],
@@ -69,7 +72,7 @@
                          [UIImage imageNamed:@"5.jpg"],
                          nil];
     
-    _photoPageViewControllerUp = [self makePPVC:svUpRect initialImages:_upImageViewArray];
+    _photoPageViewControllerUp = [self makePPVC:svUpRect initialImages:[[LocalImageManager sharedManager]userImages]];
     _photoPageViewControllerDown = [self makePPVC:svDownRect initialImages:_downImageViewArray];
 }
 

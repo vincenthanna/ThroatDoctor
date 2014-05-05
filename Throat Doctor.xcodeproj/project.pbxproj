@@ -38,6 +38,7 @@
 		C5D9FB151917B05A0052C2AC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D9FB141917B05A0052C2AC /* SystemConfiguration.framework */; };
 		C5D9FB171917B0630052C2AC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D9FB161917B0630052C2AC /* QuartzCore.framework */; };
 		C5D9FB191917B0700052C2AC /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D9FB181917B0700052C2AC /* libc++.dylib */; };
+		C5D9FB1C1917E5870052C2AC /* LocalImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D9FB1B1917E5870052C2AC /* LocalImageManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,8 @@
 		C5D9FB141917B05A0052C2AC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C5D9FB161917B0630052C2AC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C5D9FB181917B0700052C2AC /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		C5D9FB1A1917E5870052C2AC /* LocalImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalImageManager.h; path = "Throat Doctor/LocalImageManager.h"; sourceTree = "<group>"; };
+		C5D9FB1B1917E5870052C2AC /* LocalImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalImageManager.m; path = "Throat Doctor/LocalImageManager.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				C544BD90191088040020A46A /* PhotoPageView */,
+				C5D9FB1D1917E5930052C2AC /* Local Image Manager */,
 				C5D2E26D18F4FE4A007E87C0 /* AppDelegate.h */,
 				C5D2E26E18F4FE4A007E87C0 /* AppDelegate.m */,
 				C5D2E29A18F6586D007E87C0 /* CheckViewController.h */,
@@ -224,6 +228,16 @@
 				C5D2E28918F4FE4A007E87C0 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C5D9FB1D1917E5930052C2AC /* Local Image Manager */ = {
+			isa = PBXGroup;
+			children = (
+				C5D9FB1A1917E5870052C2AC /* LocalImageManager.h */,
+				C5D9FB1B1917E5870052C2AC /* LocalImageManager.m */,
+			);
+			name = "Local Image Manager";
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,6 +350,7 @@
 				C544BD8E191087FC0020A46A /* PhotoViewController.m in Sources */,
 				C544BD8D191087FC0020A46A /* PhotoPageViewController.m in Sources */,
 				C5D2E26B18F4FE4A007E87C0 /* main.m in Sources */,
+				C5D9FB1C1917E5870052C2AC /* LocalImageManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,7 +12,7 @@
 {
     UIScrollView* _scrollViewUp;
     UIScrollView* _scrollViewDown;
-    NSMutableArray* _upImageViewArray;
+//    NSMutableArray* _upImageViewArray;
     NSMutableArray* _downImageViewArray;
     
     PhotoPageViewController* _photoPageViewControllerUp;

@@ -10,6 +10,7 @@
 #import "CheckViewController.h"
 #import <MobileCoreServices/UTCoreTypes.h>
 #import <Dropbox/Dropbox.h>
+#import "LocalImageManager.h"
 
 @interface ViewController ()
 
@@ -25,6 +26,7 @@
     _tableView.dataSource = self;
     
     [self setDropboxDBFileSystem];
+    [[LocalImageManager sharedManager] updateLocalImages];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,14 +46,13 @@
 // section번호마다 항목이 몇개인지 정하는 함수
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return 3;
 }
 
 // Section 제목
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return @"";
 }
-
 
 // 기본 cell 생성 delegate
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -67,8 +68,11 @@
         case 1:
             [cell.textLabel setText:@"검사"];
             break;
+        case 2:
+            [cell.textLabel setText:@"Dropbox 링크"];
+            break;
         default:
-            [cell.textLabel setText:@"tesxt"];
+            [cell.textLabel setText:@"undefined"];
             break;
     }
     
@@ -82,13 +86,13 @@
     switch(indexPath.row) {
         case 0:
             // 사진을 찍는다.
-            [self takePicture];
-            break;
+            return [self takePicture];
         case 1:
             // 검사화면으로 이동
-            [self checkStatus];
-            break;
-            
+            return [self checkStatus];
+        case 2:
+            // 검사화면으로 이동
+            return [self didPressLink];
     }
 }
 
@@ -127,15 +131,18 @@
 {
     NSString *mediaType = info[UIImagePickerControllerMediaType];
     
-//    [self dismissViewControllerAnimated:YES completion:nil];
-    
     if ([mediaType isEqualToString:(NSString *)kUTTypeImage]) {
         UIImage *image = info[UIImagePickerControllerOriginalImage];
-        UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:finishedSavingWithError:contextInfo:), nil);
+        
+        if (![[LocalImageManager sharedManager] saveUserImage:image]) {
+            NSLog(@"can't save image!");
+        }
     }
     else {
         NSLog(@"Not supported media type=%@", mediaType);
     }
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)image:(UIImage *)image finishedSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
@@ -153,6 +160,7 @@
 
 -(void)checkStatus
 {
+    [[LocalImageManager sharedManager] updateLocalImages];
     [self performSegueWithIdentifier:@"segueCheckViewController" sender:self];
 }
 
@@ -175,10 +183,18 @@
     
     if (account) {
         DBFilesystem *filesystem = [[DBFilesystem alloc] initWithAccount:account];
-        [DBFilesystem setSharedFilesystem:filesystem];
+        if ([DBFilesystem sharedFilesystem] == nil) {
+            [DBFilesystem setSharedFilesystem:filesystem];
+        }
     }
     else {
         NSLog(@"Can't get DBAccount!");
+        //[self setDropboxDBFileSystem];
+        [NSTimer scheduledTimerWithTimeInterval:0.5f
+                                         target:self
+                                       selector:@selector(setDropboxDBFileSystem)
+                                       userInfo:nil
+                                        repeats:NO];
     }
 }
 
