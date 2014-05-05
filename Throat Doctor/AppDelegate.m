@@ -7,12 +7,17 @@
 //
 
 #import "AppDelegate.h"
+#import <Dropbox/Dropbox.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    DBAccountManager *accountManager =
+    [[DBAccountManager alloc] initWithAppKey:@"eed61350j8ws8wv" secret:@"t8hfyzon4be64iz"];
+    [DBAccountManager setSharedManager:accountManager];
+    
     return YES;
 }
 							

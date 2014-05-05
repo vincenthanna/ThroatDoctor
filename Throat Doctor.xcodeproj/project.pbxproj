@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C544BD8D191087FC0020A46A /* PhotoPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C544BD88191087FB0020A46A /* PhotoPageViewController.m */; };
+		C544BD8E191087FC0020A46A /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C544BD8A191087FB0020A46A /* PhotoViewController.m */; };
+		C544BD8F191087FC0020A46A /* ImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C544BD8C191087FB0020A46A /* ImageScrollView.m */; };
 		C5D2E25F18F4FE4A007E87C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D2E25E18F4FE4A007E87C0 /* Foundation.framework */; };
 		C5D2E26118F4FE4A007E87C0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D2E26018F4FE4A007E87C0 /* CoreGraphics.framework */; };
 		C5D2E26318F4FE4A007E87C0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D2E26218F4FE4A007E87C0 /* UIKit.framework */; };
 		C5D2E26918F4FE4A007E87C0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C5D2E26718F4FE4A007E87C0 /* InfoPlist.strings */; };
 		C5D2E26B18F4FE4A007E87C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D2E26A18F4FE4A007E87C0 /* main.m */; };
 		C5D2E26F18F4FE4A007E87C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D2E26E18F4FE4A007E87C0 /* AppDelegate.m */; };
-		C5D2E27218F4FE4A007E87C0 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5D2E27018F4FE4A007E87C0 /* Main_iPhone.storyboard */; };
-		C5D2E27518F4FE4A007E87C0 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5D2E27318F4FE4A007E87C0 /* Main_iPad.storyboard */; };
 		C5D2E27818F4FE4A007E87C0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D2E27718F4FE4A007E87C0 /* ViewController.m */; };
 		C5D2E27A18F4FE4A007E87C0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5D2E27918F4FE4A007E87C0 /* Images.xcassets */; };
 		C5D2E28118F4FE4A007E87C0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D2E28018F4FE4A007E87C0 /* XCTest.framework */; };
@@ -22,6 +23,21 @@
 		C5D2E28318F4FE4A007E87C0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D2E26218F4FE4A007E87C0 /* UIKit.framework */; };
 		C5D2E28B18F4FE4A007E87C0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C5D2E28918F4FE4A007E87C0 /* InfoPlist.strings */; };
 		C5D2E28D18F4FE4A007E87C0 /* Throat_DoctorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D2E28C18F4FE4A007E87C0 /* Throat_DoctorTests.m */; };
+		C5D2E29718F502EA007E87C0 /* Storyboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5D2E29618F502EA007E87C0 /* Storyboard_iPhone.storyboard */; };
+		C5D2E29918F5033E007E87C0 /* Storyboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5D2E29818F5033E007E87C0 /* Storyboard_iPad.storyboard */; };
+		C5D2E29C18F6586D007E87C0 /* CheckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D2E29B18F6586D007E87C0 /* CheckViewController.m */; };
+		C5D2E2B618F78A23007E87C0 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C5D2E2B118F78A23007E87C0 /* 1.jpg */; };
+		C5D2E2B718F78A23007E87C0 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C5D2E2B218F78A23007E87C0 /* 2.jpg */; };
+		C5D2E2B818F78A23007E87C0 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C5D2E2B318F78A23007E87C0 /* 3.jpg */; };
+		C5D2E2B918F78A23007E87C0 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C5D2E2B418F78A23007E87C0 /* 4.jpg */; };
+		C5D2E2BA18F78A23007E87C0 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C5D2E2B518F78A23007E87C0 /* 5.jpg */; };
+		C5D9FAB5191653600052C2AC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D9FAB4191653600052C2AC /* MobileCoreServices.framework */; };
+		C5D9FB0F1917B0040052C2AC /* Dropbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D9FB0E1917B0040052C2AC /* Dropbox.framework */; };
+		C5D9FB111917B0480052C2AC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D9FB101917B0480052C2AC /* CFNetwork.framework */; };
+		C5D9FB131917B0500052C2AC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D9FB121917B0500052C2AC /* Security.framework */; };
+		C5D9FB151917B05A0052C2AC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D9FB141917B05A0052C2AC /* SystemConfiguration.framework */; };
+		C5D9FB171917B0630052C2AC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D9FB161917B0630052C2AC /* QuartzCore.framework */; };
+		C5D9FB191917B0700052C2AC /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D9FB181917B0700052C2AC /* libc++.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +51,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C544BD87191087FB0020A46A /* PhotoPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoPageViewController.h; sourceTree = "<group>"; };
+		C544BD88191087FB0020A46A /* PhotoPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoPageViewController.m; sourceTree = "<group>"; };
+		C544BD89191087FB0020A46A /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
+		C544BD8A191087FB0020A46A /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
+		C544BD8B191087FB0020A46A /* ImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScrollView.h; sourceTree = "<group>"; };
+		C544BD8C191087FB0020A46A /* ImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageScrollView.m; sourceTree = "<group>"; };
 		C5D2E25B18F4FE4A007E87C0 /* Throat Doctor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Throat Doctor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5D2E25E18F4FE4A007E87C0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C5D2E26018F4FE4A007E87C0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -45,8 +67,6 @@
 		C5D2E26C18F4FE4A007E87C0 /* Throat Doctor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Throat Doctor-Prefix.pch"; sourceTree = "<group>"; };
 		C5D2E26D18F4FE4A007E87C0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C5D2E26E18F4FE4A007E87C0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C5D2E27118F4FE4A007E87C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		C5D2E27418F4FE4A007E87C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		C5D2E27618F4FE4A007E87C0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		C5D2E27718F4FE4A007E87C0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C5D2E27918F4FE4A007E87C0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -55,6 +75,22 @@
 		C5D2E28818F4FE4A007E87C0 /* Throat DoctorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Throat DoctorTests-Info.plist"; sourceTree = "<group>"; };
 		C5D2E28A18F4FE4A007E87C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C5D2E28C18F4FE4A007E87C0 /* Throat_DoctorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Throat_DoctorTests.m; sourceTree = "<group>"; };
+		C5D2E29618F502EA007E87C0 /* Storyboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard_iPhone.storyboard; sourceTree = "<group>"; };
+		C5D2E29818F5033E007E87C0 /* Storyboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard_iPad.storyboard; sourceTree = "<group>"; };
+		C5D2E29A18F6586D007E87C0 /* CheckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckViewController.h; path = ../CheckViewController.h; sourceTree = "<group>"; };
+		C5D2E29B18F6586D007E87C0 /* CheckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckViewController.m; path = ../CheckViewController.m; sourceTree = "<group>"; };
+		C5D2E2B118F78A23007E87C0 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 1.jpg; path = ../1.jpg; sourceTree = "<group>"; };
+		C5D2E2B218F78A23007E87C0 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 2.jpg; path = ../2.jpg; sourceTree = "<group>"; };
+		C5D2E2B318F78A23007E87C0 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 3.jpg; path = ../3.jpg; sourceTree = "<group>"; };
+		C5D2E2B418F78A23007E87C0 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 4.jpg; path = ../4.jpg; sourceTree = "<group>"; };
+		C5D2E2B518F78A23007E87C0 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 5.jpg; path = ../5.jpg; sourceTree = "<group>"; };
+		C5D9FAB4191653600052C2AC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		C5D9FB0E1917B0040052C2AC /* Dropbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Dropbox.framework; sourceTree = "<group>"; };
+		C5D9FB101917B0480052C2AC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		C5D9FB121917B0500052C2AC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		C5D9FB141917B05A0052C2AC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C5D9FB161917B0630052C2AC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C5D9FB181917B0700052C2AC /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +98,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5D9FB191917B0700052C2AC /* libc++.dylib in Frameworks */,
+				C5D9FB171917B0630052C2AC /* QuartzCore.framework in Frameworks */,
+				C5D9FB151917B05A0052C2AC /* SystemConfiguration.framework in Frameworks */,
+				C5D9FB131917B0500052C2AC /* Security.framework in Frameworks */,
+				C5D9FB111917B0480052C2AC /* CFNetwork.framework in Frameworks */,
+				C5D9FAB5191653600052C2AC /* MobileCoreServices.framework in Frameworks */,
 				C5D2E26118F4FE4A007E87C0 /* CoreGraphics.framework in Frameworks */,
+				C5D9FB0F1917B0040052C2AC /* Dropbox.framework in Frameworks */,
 				C5D2E26318F4FE4A007E87C0 /* UIKit.framework in Frameworks */,
 				C5D2E25F18F4FE4A007E87C0 /* Foundation.framework in Frameworks */,
 			);
@@ -81,6 +124,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C544BD90191088040020A46A /* PhotoPageView */ = {
+			isa = PBXGroup;
+			children = (
+				C544BD87191087FB0020A46A /* PhotoPageViewController.h */,
+				C544BD88191087FB0020A46A /* PhotoPageViewController.m */,
+				C544BD89191087FB0020A46A /* PhotoViewController.h */,
+				C544BD8A191087FB0020A46A /* PhotoViewController.m */,
+				C544BD8B191087FB0020A46A /* ImageScrollView.h */,
+				C544BD8C191087FB0020A46A /* ImageScrollView.m */,
+			);
+			name = PhotoPageView;
+			sourceTree = "<group>";
+		};
 		C5D2E25218F4FE4A007E87C0 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +159,13 @@
 		C5D2E25D18F4FE4A007E87C0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C5D9FB181917B0700052C2AC /* libc++.dylib */,
+				C5D9FB161917B0630052C2AC /* QuartzCore.framework */,
+				C5D9FB141917B05A0052C2AC /* SystemConfiguration.framework */,
+				C5D9FB121917B0500052C2AC /* Security.framework */,
+				C5D9FB101917B0480052C2AC /* CFNetwork.framework */,
+				C5D9FB0E1917B0040052C2AC /* Dropbox.framework */,
+				C5D9FAB4191653600052C2AC /* MobileCoreServices.framework */,
 				C5D2E25E18F4FE4A007E87C0 /* Foundation.framework */,
 				C5D2E26018F4FE4A007E87C0 /* CoreGraphics.framework */,
 				C5D2E26218F4FE4A007E87C0 /* UIKit.framework */,
@@ -114,12 +177,15 @@
 		C5D2E26418F4FE4A007E87C0 /* Throat Doctor */ = {
 			isa = PBXGroup;
 			children = (
+				C544BD90191088040020A46A /* PhotoPageView */,
 				C5D2E26D18F4FE4A007E87C0 /* AppDelegate.h */,
 				C5D2E26E18F4FE4A007E87C0 /* AppDelegate.m */,
-				C5D2E27018F4FE4A007E87C0 /* Main_iPhone.storyboard */,
-				C5D2E27318F4FE4A007E87C0 /* Main_iPad.storyboard */,
+				C5D2E29A18F6586D007E87C0 /* CheckViewController.h */,
+				C5D2E29B18F6586D007E87C0 /* CheckViewController.m */,
 				C5D2E27618F4FE4A007E87C0 /* ViewController.h */,
 				C5D2E27718F4FE4A007E87C0 /* ViewController.m */,
+				C5D2E29618F502EA007E87C0 /* Storyboard_iPhone.storyboard */,
+				C5D2E29818F5033E007E87C0 /* Storyboard_iPad.storyboard */,
 				C5D2E27918F4FE4A007E87C0 /* Images.xcassets */,
 				C5D2E26518F4FE4A007E87C0 /* Supporting Files */,
 			);
@@ -129,6 +195,11 @@
 		C5D2E26518F4FE4A007E87C0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C5D2E2B118F78A23007E87C0 /* 1.jpg */,
+				C5D2E2B218F78A23007E87C0 /* 2.jpg */,
+				C5D2E2B318F78A23007E87C0 /* 3.jpg */,
+				C5D2E2B418F78A23007E87C0 /* 4.jpg */,
+				C5D2E2B518F78A23007E87C0 /* 5.jpg */,
 				C5D2E26618F4FE4A007E87C0 /* Throat Doctor-Info.plist */,
 				C5D2E26718F4FE4A007E87C0 /* InfoPlist.strings */,
 				C5D2E26A18F4FE4A007E87C0 /* main.m */,
@@ -231,10 +302,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5D2E27518F4FE4A007E87C0 /* Main_iPad.storyboard in Resources */,
+				C5D2E2B918F78A23007E87C0 /* 4.jpg in Resources */,
+				C5D2E2B718F78A23007E87C0 /* 2.jpg in Resources */,
 				C5D2E27A18F4FE4A007E87C0 /* Images.xcassets in Resources */,
-				C5D2E27218F4FE4A007E87C0 /* Main_iPhone.storyboard in Resources */,
+				C5D2E2BA18F78A23007E87C0 /* 5.jpg in Resources */,
+				C5D2E29718F502EA007E87C0 /* Storyboard_iPhone.storyboard in Resources */,
 				C5D2E26918F4FE4A007E87C0 /* InfoPlist.strings in Resources */,
+				C5D2E29918F5033E007E87C0 /* Storyboard_iPad.storyboard in Resources */,
+				C5D2E2B818F78A23007E87C0 /* 3.jpg in Resources */,
+				C5D2E2B618F78A23007E87C0 /* 1.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,8 +329,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C544BD8F191087FC0020A46A /* ImageScrollView.m in Sources */,
 				C5D2E27818F4FE4A007E87C0 /* ViewController.m in Sources */,
+				C5D2E29C18F6586D007E87C0 /* CheckViewController.m in Sources */,
 				C5D2E26F18F4FE4A007E87C0 /* AppDelegate.m in Sources */,
+				C544BD8E191087FC0020A46A /* PhotoViewController.m in Sources */,
+				C544BD8D191087FC0020A46A /* PhotoPageViewController.m in Sources */,
 				C5D2E26B18F4FE4A007E87C0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,22 +364,6 @@
 				C5D2E26818F4FE4A007E87C0 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		C5D2E27018F4FE4A007E87C0 /* Main_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C5D2E27118F4FE4A007E87C0 /* Base */,
-			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		C5D2E27318F4FE4A007E87C0 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C5D2E27418F4FE4A007E87C0 /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		C5D2E28918F4FE4A007E87C0 /* InfoPlist.strings */ = {
@@ -390,6 +454,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Throat Doctor/Throat Doctor-Prefix.pch";
 				INFOPLIST_FILE = "Throat Doctor/Throat Doctor-Info.plist";
@@ -403,6 +471,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Throat Doctor/Throat Doctor-Prefix.pch";
 				INFOPLIST_FILE = "Throat Doctor/Throat Doctor-Info.plist";
@@ -470,6 +542,7 @@
 				C5D2E29218F4FE4A007E87C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C5D2E29318F4FE4A007E87C0 /* Build configuration list for PBXNativeTarget "Throat DoctorTests" */ = {
 			isa = XCConfigurationList;
@@ -478,6 +551,7 @@
 				C5D2E29518F4FE4A007E87C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
