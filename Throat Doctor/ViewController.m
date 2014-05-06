@@ -26,7 +26,7 @@
     _tableView.dataSource = self;
     
     [self setDropboxDBFileSystem];
-    [[LocalImageManager sharedManager] updateLocalImages];
+//    [[LocalImageManager sharedManager] updateLocalImages];
 }
 
 - (void)didReceiveMemoryWarning
@@ -160,7 +160,7 @@
 
 -(void)checkStatus
 {
-    [[LocalImageManager sharedManager] updateLocalImages];
+//    [[LocalImageManager sharedManager] updateLocalImages];
     [self performSegueWithIdentifier:@"segueCheckViewController" sender:self];
 }
 

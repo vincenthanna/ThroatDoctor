@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PhotoViewController.h"
 
 @interface LocalImageManager : NSObject 
 {
@@ -16,7 +17,8 @@
 // external interfaces
 +(LocalImageManager*)sharedManager;
 -(BOOL)saveUserImage:(UIImage*)image;
--(void)updateLocalImages;
+-(UIImage*)getImageByIndex:(NSInteger)index;
+-(BOOL)isImageExists:(NSInteger)index;
 
 @property (nonatomic,retain,readonly) NSMutableArray* userImages;
 

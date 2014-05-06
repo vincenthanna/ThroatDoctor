@@ -8,17 +8,39 @@
 
 #import <UIKit/UIKit.h>
 #import "PhotoPageViewController.h"
+#import "PhotoViewController.h"
+#import "LocalImageManager.h"
+
+#pragma mark -
+#pragma mark PhotoViewController DataSource (Up)
+@interface PVCDataSourceUp :NSObject <PhotoViewControllerDataSource>
+{
+
+}
+@end
+
+#pragma mark -
+#pragma mark PhotoViewController DataSource (Down)
+@interface PVCDataSourceDown :NSObject <PhotoViewControllerDataSource>
+{
+    NSMutableArray *_imageArray;
+}
+@end
+
 @interface CheckViewController : UIViewController <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 {
     UIScrollView* _scrollViewUp;
     UIScrollView* _scrollViewDown;
-//    NSMutableArray* _upImageViewArray;
-    NSMutableArray* _downImageViewArray;
     
     PhotoPageViewController* _photoPageViewControllerUp;
     PhotoPageViewController* _photoPageViewControllerDown;
+    
+    PVCDataSourceUp* _pvcDataSourceUp;
+    PVCDataSourceDown* _pvcDataSourceDown;
     
     IBOutlet UITabBar* _tabBar;
 }
 
 @end
+
+

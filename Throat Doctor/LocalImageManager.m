@@ -81,7 +81,28 @@
     }
 }
 
--(void)updateLocalImages
+-(UIImage*)getImageByIndex:(NSInteger)index
+{
+    NSError* error;
+    NSFileManager* manager = [NSFileManager defaultManager];
+    NSString* docDir = [LocalImageManager getUserImageDirPath];
+    NSArray *imageFiles;
+    
+    imageFiles = [manager contentsOfDirectoryAtPath:docDir error:&error];
+    if (imageFiles) {
+        if (index >= 0 && index < [imageFiles count]) {
+            NSString* fileName = [imageFiles objectAtIndex:index];
+            NSString* filePath = [NSString stringWithFormat:@"%@/%@", docDir, fileName];
+            NSData *data = [manager contentsAtPath:filePath];
+            if (data) {
+                return [[UIImage alloc]initWithData:data];
+            }
+        }
+    }
+    return nil;
+}
+
+-(BOOL)isImageExists:(NSInteger)index
 {
     NSError* error;
     NSFileManager* manager = [NSFileManager defaultManager];
@@ -91,27 +112,11 @@
     [_userImages removeAllObjects];
     imageFiles = [manager contentsOfDirectoryAtPath:docDir error:&error];
     if (imageFiles) {
-        for (NSString* fileName in imageFiles) {
-            NSString* filePath = [NSString stringWithFormat:@"%@/%@", docDir, fileName];
-//            NSLog(@"ImageFileName = %@", filePath);
-            NSData *data = [manager contentsAtPath:filePath];
-            if (data) {
-                UIImage *image = [[UIImage alloc]initWithData:data];
-                if (image) {
-                    [_userImages addObject:image];
-                }
-                else {
-                    NSLog(@"CANNOT Get UIImage from Data :%@", filePath);
-                }
-            }
-            else {
-                NSLog(@"CANNOT Get File Data :%@", filePath);
-            }
+        if (index >= 0 && index < imageFiles.count) {
+            return YES;
         }
     }
-    else {
-        NSLog(@"can't get image files");
-    }
+    return NO;
 }
 
 @end

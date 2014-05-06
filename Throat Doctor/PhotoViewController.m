@@ -56,37 +56,25 @@
 
 @implementation PhotoViewController
 
-@synthesize _imageArray;
-@synthesize _imageCount;
 @synthesize _imageIndex;
 
-- (PhotoViewController *)photoViewControllerForImageIndex:(NSUInteger)imageIndex
-                                               imageCount:(NSInteger)imageCount
-                                               imageArray:(NSMutableArray*)imageArray;
+- (PhotoViewController *)photoViewControllerForImageIndex:(NSUInteger)imageIndex dataSource:(id)dataSource
 {
-    if (imageIndex < imageCount) {
-        return [[PhotoViewController alloc] initWithImages:imageArray
-                                                imageCount:imageCount
-                                                imageIndex:imageIndex
-                                                     frame:self.view.frame];
+    if ([self.dataSource isImageExists:imageIndex]) {
+        return [[PhotoViewController alloc] initWithIndex:imageIndex frame:self.view.frame dataSource:dataSource];
     }
     return nil;
 }
 
-- (id)initWithImages:(NSMutableArray*)imageArray
-          imageCount:(NSInteger)imageCount
-          imageIndex:(NSInteger)imageIndex
-               frame:(CGRect)frame
+- (id)initWithIndex:(NSInteger)index frame:(CGRect)frame dataSource:(id)dataSource
 {
-    _imageArray = imageArray;
-    _imageCount = imageCount;
-    _imageIndex = imageIndex;
+    _imageIndex = index;
     CGRect viewFrame = CGRectMake(0,0,frame.size.width, frame.size.height);
+    self.dataSource = dataSource;
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
         [self.view setFrame:viewFrame];
     }
-    NSLog(@"PhotoViewController.view = %@", NSStringFromCGRect(viewFrame));
     return self;
 }
 
@@ -95,9 +83,9 @@
     [super viewDidLoad];
     ImageScrollView *scrollView = [[ImageScrollView alloc] initWithFrame:self.view.frame];
     [self.view addSubview:scrollView];
-    [scrollView showImage:_imageArray[_imageIndex]];
+    [scrollView showImage:[self.dataSource getImageByIndex:_imageIndex]];
     scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    NSLog(@"ImageScrollView = %@", NSStringFromCGRect(scrollView.frame));
+    //NSLog(@"ImageScrollView = %@", NSStringFromCGRect(scrollView.frame));
 }
 
 // (this can also be defined in Info.plist via UISupportedInterfaceOrientations)

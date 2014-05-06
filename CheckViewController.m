@@ -10,6 +10,46 @@
 #import "CheckViewController.h"
 #import "LocalImageManager.h"
 
+#pragma mark -
+#pragma mark PhotoViewController DataSource (Up)
+@implementation PVCDataSourceUp
+-(UIImage*)getImageByIndex:(NSInteger)index
+{
+    return [[LocalImageManager sharedManager]getImageByIndex:index];
+}
+
+-(BOOL)isImageExists:(NSInteger)index
+{
+    return [[LocalImageManager sharedManager]isImageExists:index];
+}
+@end
+
+#pragma mark -
+#pragma mark PhotoViewController DataSource (Down)
+@implementation PVCDataSourceDown
+-(UIImage*)getImageByIndex:(NSInteger)index
+{
+    if (_imageArray == nil) {
+        _imageArray = [NSMutableArray arrayWithObjects:
+                               [UIImage imageNamed:@"1.jpg"],
+                               [UIImage imageNamed:@"2.jpg"],
+                               [UIImage imageNamed:@"3.jpg"],
+                               [UIImage imageNamed:@"4.jpg"],
+                               [UIImage imageNamed:@"5.jpg"],
+                               nil];
+    }
+    return _imageArray[index];
+}
+
+-(BOOL)isImageExists:(NSInteger)index
+{
+    if (index < _imageArray.count && index >= 0) {
+        return YES;
+    }
+    return NO;
+}
+@end
+
 @implementation CheckViewController
 
 - (void)viewDidLoad
@@ -18,6 +58,9 @@
     
     // navigation bar의 반투명효과를 off
     self.navigationController.navigationBar.translucent = NO;
+    
+    _pvcDataSourceUp = [[PVCDataSourceUp alloc]init];
+    _pvcDataSourceDown = [[PVCDataSourceDown alloc]init];
     
     CGRect svUpRect;
     CGRect svDownRect;
@@ -33,47 +76,10 @@
     svDownRect.size.height = svUpRect.size.height;
     svDownRect.origin.y += svDownRect.size.height;
     
-    /*
-    // 시작위치가 어디인가를 확인해보자
-    {
-        UILabel* testLabel = [[UILabel alloc]initWithFrame:CGRectMake(0,0,320,240)];
-        [testLabel setText:[NSString stringWithFormat:@"Label(%.01f %.01f)", testLabel.frame.origin.x, testLabel.frame.origin.y]];
-        [testLabel setBackgroundColor:[UIColor redColor]];
-        [self.view addSubview:testLabel];
-    }
-    
-    {
-        UILabel* testLabel = [[UILabel alloc]initWithFrame:CGRectMake(0,240,320,240)];
-        [testLabel setText:[NSString stringWithFormat:@"Label(%.01f %.01f)", testLabel.frame.origin.x, testLabel.frame.origin.y]];
-        [testLabel setBackgroundColor:[UIColor blueColor]];
-        [self.view addSubview:testLabel];
-    }
-     */
-
-    
     NSLog(@"up=%@ down=%@", NSStringFromCGRect(svUpRect), NSStringFromCGRect(svDownRect));
-    
 
-    /*
-    _upImageViewArray = [NSMutableArray arrayWithObjects:
-                       [UIImage imageNamed:@"1.jpg"],
-                       [UIImage imageNamed:@"2.jpg"],
-                       [UIImage imageNamed:@"3.jpg"],
-                       [UIImage imageNamed:@"4.jpg"],
-                       [UIImage imageNamed:@"5.jpg"],
-                       nil];
-     */
-    
-    _downImageViewArray = [NSMutableArray arrayWithObjects:
-                         [UIImage imageNamed:@"1.jpg"],
-                         [UIImage imageNamed:@"2.jpg"],
-                         [UIImage imageNamed:@"3.jpg"],
-                         [UIImage imageNamed:@"4.jpg"],
-                         [UIImage imageNamed:@"5.jpg"],
-                         nil];
-    
-    _photoPageViewControllerUp = [self makePPVC:svUpRect initialImages:[[LocalImageManager sharedManager]userImages]];
-    _photoPageViewControllerDown = [self makePPVC:svDownRect initialImages:_downImageViewArray];
+    _photoPageViewControllerUp = [self makePPVC:svUpRect photoViewControllerDataSource:_pvcDataSourceUp];
+    _photoPageViewControllerDown = [self makePPVC:svDownRect photoViewControllerDataSource:_pvcDataSourceDown];
 }
 
 - (void)didReceiveMemoryWarning
@@ -82,7 +88,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (PhotoPageViewController*)makePPVC:(CGRect)viewSize initialImages:(NSMutableArray*)initialImages
+- (PhotoPageViewController*)makePPVC:(CGRect)viewSize photoViewControllerDataSource:(id)photoViewControllerDataSource
 {
     PhotoPageViewController* ppvc;
     ppvc = [[PhotoPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
@@ -94,12 +100,12 @@
     
     ppvc.dataSource = self;
     ppvc.delegate = self;
-    [ppvc addImages:initialImages];
-    
-    PhotoViewController *pvc = [[PhotoViewController alloc] initWithImages:[ppvc imageArray]
-                                                                imageCount:[ppvc imageArray].count
-                                                                imageIndex:0
-                                                                     frame:viewSize];
+    ppvc._pvcDataSource = photoViewControllerDataSource;
+
+    PhotoViewController *pvc = [[PhotoViewController alloc] initWithIndex:0
+                                                                    frame:viewSize
+                                                               dataSource:photoViewControllerDataSource];
+
     if (pvc != nil) {
         // assign the first page to the pageViewController (our rootViewController)
         [ppvc setViewControllers:@[pvc]
@@ -109,9 +115,6 @@
         [ppvc didMoveToParentViewController:self];
         [ppvc.view setFrame:viewSize];
     }
-    
-
-    
     return ppvc;
 }
 
@@ -122,18 +125,14 @@
 {
     PhotoPageViewController* ppvc = (PhotoPageViewController*)pvc;
     PhotoViewController *photoVC = (PhotoViewController*)vc;
-    return [photoVC photoViewControllerForImageIndex:photoVC._imageIndex-1
-                                          imageCount:[ppvc imageArray].count
-                                          imageArray:[ppvc imageArray]];
+    return [photoVC photoViewControllerForImageIndex:photoVC._imageIndex-1 dataSource:ppvc._pvcDataSource];
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pvc viewControllerAfterViewController:(PhotoViewController *)vc
 {
     PhotoPageViewController* ppvc = (PhotoPageViewController*)pvc;
     PhotoViewController *photoVC = (PhotoViewController*)vc;
-    return [photoVC photoViewControllerForImageIndex:photoVC._imageIndex+1
-                                          imageCount:[ppvc imageArray].count
-                                          imageArray:[ppvc imageArray]];
+    return [photoVC photoViewControllerForImageIndex:photoVC._imageIndex+1 dataSource:ppvc._pvcDataSource];
 }
 
 

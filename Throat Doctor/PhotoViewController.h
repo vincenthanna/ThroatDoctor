@@ -48,6 +48,11 @@
 #import <UIKit/UIKit.h>
 #import "ImageScrollView.h"
 
+@protocol PhotoViewControllerDataSource
+-(UIImage*)getImageByIndex:(NSInteger)index;
+-(BOOL)isImageExists:(NSInteger)index;
+@end
+
 @interface PhotoViewController : UIViewController
 {
     NSMutableArray* _imageArray;
@@ -56,18 +61,10 @@
 }
 
 @property (nonatomic,retain) ImageScrollView* imageScrollView;
-@property (nonatomic, retain) NSMutableArray* _imageArray;
 @property (nonatomic)NSInteger _imageIndex;
-@property (nonatomic)NSInteger _imageCount;
+@property (nonatomic,retain) id <PhotoViewControllerDataSource> dataSource;
 
-
-- (PhotoViewController *)photoViewControllerForImageIndex:(NSUInteger)imageIndex
-                                               imageCount:(NSInteger)imageCount
-                                               imageArray:(NSMutableArray*)imageArray;
-- (id)initWithImages:(NSMutableArray*)imageArray
-          imageCount:(NSInteger)imageCount
-          imageIndex:(NSInteger)imageIndex
-               frame:(CGRect)frame;
-
+- (PhotoViewController *)photoViewControllerForImageIndex:(NSUInteger)imageIndex dataSource:(id)dataSource;
+- (id)initWithIndex:(NSInteger)index frame:(CGRect)frame dataSource:(id)dataSource;
 
 @end

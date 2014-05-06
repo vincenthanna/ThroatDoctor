@@ -11,17 +11,9 @@
 
 @interface PhotoPageViewController : UIPageViewController
 {
-    NSMutableArray* _imageArray;
+    id _pvcDataSource;
 }
 
--(NSMutableArray*)imageArray;
-
-#pragma mark -
-#pragma mark image add/remove/clear functions
-
--(void)addImage:(UIImage*)image;
--(void)addImages:(NSMutableArray*)images;
--(void)resetImages:(NSMutableArray*)images;
--(void)clearImages;
+@property (nonatomic)id _pvcDataSource;
 
 @end
